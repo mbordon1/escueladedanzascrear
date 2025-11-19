@@ -17,30 +17,31 @@ window.addEventListener("scroll", () => {
   document.body.classList.toggle("scrolled", window.scrollY > 80);
 });
 
-const btnTop = document.getElementById("btnTop");
+const btnScroll = document.getElementById("btnScroll");
+const iconScroll = document.getElementById("iconScroll");
+const header = document.querySelector("header");
+const headerHeight = header.offsetHeight;
 
-// Mostrar botón al hacer scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    btnTop.classList.add("visible");
+function updateScrollIcon() {
+  const scrolled = window.scrollY;
+
+  if (scrolled > headerHeight) {
+    btnScroll.classList.add("visible");
   } else {
-    btnTop.classList.remove("visible");
+    btnScroll.classList.remove("visible");
   }
-});
 
-btnTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-const footer = document.querySelector("footer");
-
-window.addEventListener("scroll", () => {
-  const distanciaFooter = footer.getBoundingClientRect().top;
-  const altoVentana = window.innerHeight;
-  if (distanciaFooter < altoVentana - 120) {
-    btnTop.classList.remove("visible");
+  const atTop = scrolled < 550; 
+  if (atTop) {
+    iconScroll.innerHTML = '<path d="M12 16l-6-6h12z"></path>'; // ↓
+    btnScroll.onclick = () => 
+      window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+  } else {
+    iconScroll.innerHTML = '<path d="M6 14l6-6 6 6H6z"></path>'; // ↑
+    btnScroll.onclick = () => 
+      window.scrollTo({ top: 0, behavior: "smooth" });
   }
-});
+}
+
+window.addEventListener("scroll", updateScrollIcon);
+updateScrollIcon();

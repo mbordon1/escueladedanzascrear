@@ -818,54 +818,67 @@ button[type="submit"]:hover {
   transform: scale(1.1);
 }
 
-/* BOTON - VOLVER ARRIBA */
-#btnTop {
+/* BOTON - SCROLL */
+#btnScroll {
   position: fixed;
   bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
   height: 50px;
-  
-  background: #ffffffa8; 
-  backdrop-filter: blur(7px); 
-  
+
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 50%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
+
   opacity: 0;
   visibility: hidden;
 
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  transition: opacity .3s ease, visibility .3s ease, transform .3s ease, background .3s ease;
+  transition:
+    opacity .35s ease,
+    visibility .35s ease,
+    transform .35s ease,
+    background .35s ease,
+    backdrop-filter .35s ease,
+    box-shadow .35s ease;
+
   z-index: 9999;
 }
 
-#btnTop.visible {
+#btnScroll.visible {
   opacity: 1;
   visibility: visible;
 }
 
-#btnTop:hover {
+#btnScroll:hover {
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(15px);
   transform: translateX(-50%) translateY(-4px);
-  background: #ffffffd0; 
+
+  box-shadow:
+    0 6px 18px rgba(181, 93, 231, 0.25),
+    0 0 10px rgba(229, 142, 255, 0.25);
 }
 
-#btnTop .icon-up {
+#btnScroll svg {
   width: 22px;
   height: 22px;
-  fill: var(--color-oscuro); 
-  transition: fill .2s ease;
+  fill: var(--color-oscuro);
+  transition: fill .25s ease, transform .25s ease;
 }
 
-#btnTop:hover .icon-up {
+#btnScroll:hover svg {
   fill: var(--color-principal);
 }
+
 
 /* SCROLL BAR */
 .scrollBar {
