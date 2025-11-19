@@ -7,8 +7,9 @@ export function renderizarClases(lista, contenedor) {
     tarjeta.classList.add("tarjeta");
 
     tarjeta.innerHTML = `
-      <img src="${clase.imagen}" alt="${clase.nombre}">
-      
+       <img src="${clase.imagen}" alt="${clase.nombre}">
+  
+      <div class="contenido">
       <h3>${clase.nombre}</h3>
 
       <span class="nivel"><strong>Nivel:</strong> ${clase.nivel}</span>
@@ -17,9 +18,9 @@ export function renderizarClases(lista, contenedor) {
       <ul>
         ${clase.horarios?.map(h => `<li>${h}</li>`).join("") || "<li>No informado</li>"}
       </ul>
+    </div>
 
-      <button type="button" data-id="${clase.id}">Ver más</button>
-    `;
+    <button type="button" data-id="${clase.id}">Ver más</button>`;
 
     contenedor.appendChild(tarjeta);
   });
@@ -79,4 +80,15 @@ export function mostrarDetalle(clase) {
     }
   });
 }
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const modalClase = document.querySelector(".modal.activo");
+    if (modalClase) {
+      const contenido = modalClase.querySelector(".modal-contenido");
+      contenido.classList.add("cerrar-animacion");
+      setTimeout(() => modalClase.remove(), 300);
+    }
+  }
+});
 

@@ -23,4 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.remove("activo");
     }
   });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("activo")) {
+      modal.classList.remove("activo");
+    }
+  });
+
 });
+
+
