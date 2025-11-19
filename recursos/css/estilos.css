@@ -1094,4 +1094,9 @@ body.scrolled .scrollBar {
     top: -6px;
     animation-duration: 1.8s;
   }
+
+  #contenedor:has(.tarjeta:nth-child(1):last-child),
+  #contenedor:has(.tarjeta:nth-child(2):last-child) {
+    grid-template-columns: 1fr !important;
+  }
 }
