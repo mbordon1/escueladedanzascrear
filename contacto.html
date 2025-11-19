@@ -17,6 +17,8 @@
         <nav class="menu" role="navigation">
             <a href="index.html">Inicio</a>
             <a href="clases.html">Clases</a>
+            <a href="https://www.google.com/maps?rlz=1C5CHFA_enAR1142AR1142&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPNIBCTI1OTQ3ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=ar&sa=X&geocode=KYVsDIbmozKUMX0Xw2RcKIuJ&daddr=Baltazar+Pardo+de+Figueroa+962,+X5000CFJ+X5000CFJ,+Córdoba" target="_blank">
+            📍 Ubicación </a>
             <a href="contacto.html" class="activo">Contacto</a>
         </nav>
         <div class="menu-toggle" id="menuToggle">☰</div>
@@ -61,11 +63,13 @@
             <span class="icono-mapa">📍</span>
             Nuestra ubicación
         </h2>
-        <div class="mapa-contenedor">
+
+        <figure class="mapa-contenedor">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.5677892567364!2d-64.20442832365279!3d-31.426032196719024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3e6860c6c85%3A0x898b285c64c3177d!2sCREAR%20-%20Escuela%20de%20Danzas!5e0!3m2!1ses-419!2sar!4v1760546280164!5m2!1ses-419!2sar">
+            loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.5677892567364!2d-64.20442832365279!3d-31.426032196719024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3e6860c6c85%3A0x898b285c64c3177d!2sCREAR%20-%20Escuela%20de%20Danzas!5e0!3m2!1ses-419!2sar!4v1760546280164!5m2!1ses-419!2sar">
             </iframe>
-        </div>
+        </figure>
 
         <div class="whatsapp-fijo">
             <a href="https://api.whatsapp.com/send/?phone=5493512587281&text=Hola!%20Quisiera%20más%20información%20sobre%20las%20clases"
@@ -90,6 +94,15 @@
         <p class="footer-nombre">Escuela de Danzas CREAR</p>
         <p id="footer-texto">© <span id="anio"></span> Todos los derechos reservados</p>
     </footer>
+
+    <div class="scrollBar"></div>
+
+    <button id="btnTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" class="icon-up">
+    <path d="M12 8l-6 6h12z" />
+    </svg>
+    </button>
+
     <script src="./recursos/js/menu.js"></script>
     <script src="./recursos/js/animaciones.js"></script>
 </body>
