@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.remove("activo");
     }
   });
-
 });
 
 
