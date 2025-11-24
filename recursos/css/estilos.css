@@ -297,6 +297,10 @@ header img:hover {
   box-shadow: 0 6px 25px rgba(255,255,255,0.3);
   animation: zoomIn .35s ease;
 }
+.modal-contenido{
+  max-height: 90vh;
+  overflow: auto;
+}
 
 @keyframes zoomIn {
   from { transform: scale(0.7); opacity: 0; }
